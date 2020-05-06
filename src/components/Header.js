@@ -9,7 +9,7 @@ export default function Header () {
     <View style={{
       marginTop: Constant.statusBarHeight,
       height: 40,
-      backgroundColor: 'skyblue',
+      backgroundColor: 'white',
       flexDirection: 'row',
       justifyContent: 'space-between'
     }}

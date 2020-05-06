@@ -11,7 +11,8 @@ export default function Header () {
       height: 40,
       backgroundColor: 'white',
       flexDirection: 'row',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      elevation: 4
     }}
     >
       <View style={{

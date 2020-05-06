@@ -11,9 +11,18 @@ export default function Header () {
       backgroundColor: 'skyblue'
     }}
     >
-      <View style={{ flexDirection: 'row' }}>
-        <Entypo name='youtube' color='red' size={32} />
-        <Text style={{ fontSize: 22 }}> YouTube </Text>
+      <View style={{
+        flexDirection: 'row',
+        margin: 5
+      }}
+      >
+        <Entypo style={{ marginLeft: 20 }} name='youtube' color='red' size={32} />
+        <Text style={{
+          fontSize: 22,
+          marginLeft: 5
+        }}
+        > YouTube
+        </Text>
       </View>
       <View />
     </View>

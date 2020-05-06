@@ -33,7 +33,8 @@ export default function Header () {
       <View style={{
         flexDirection: 'row',
         justifyContent: 'space-around',
-        width: 175
+        width: 175,
+        margin: 5
         // alignContent: 'flex-end'
       }}
       >

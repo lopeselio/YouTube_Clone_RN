@@ -22,7 +22,9 @@ const Card = () => {
           marginLeft: 10
         }}
         >
-          <Text>This is a good Course</Text>
+          <Text style={{
+            fontSize: 20
+          }}>This is a good Course</Text>
           <Text>This is a good Course</Text>
         </View>
       </View>

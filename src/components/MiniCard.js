@@ -14,7 +14,10 @@ const MiniCard = () => {
           height: 100
         }}
       />
-      <View>
+      <View style={{
+        paddingLeft: 7
+      }}
+      >
         <Text
           style={{
             fontSize: 15,

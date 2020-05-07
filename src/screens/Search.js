@@ -30,6 +30,11 @@ const SearchScreen = () => {
         />
       </View>
       <MiniCard />
+      <MiniCard />
+      <MiniCard />
+      <MiniCard />
+      <MiniCard />
+
     </View>
 
   )

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, Image, Dimensions, TextInput } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
+import MiniCard from '../components/MiniCard'
 
 const SearchScreen = () => {
   const [value, setValue] = useState('')
@@ -28,6 +29,7 @@ const SearchScreen = () => {
           size={32}
         />
       </View>
+      <MiniCard />
     </View>
 
   )

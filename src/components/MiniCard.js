@@ -20,7 +20,7 @@ const MiniCard = () => {
       >
         <Text
           style={{
-            fontSize: 15,
+            fontSize: 17,
             width: Dimensions.get('screen').width / 2
           }}
           ellipsizeMode='tail'

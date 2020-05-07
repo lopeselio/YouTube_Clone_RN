@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, Image, Dimensions, TextInput } from 'react-native'
+import { View, Text, Image, Dimensions, TextInput, ScrollView } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MiniCard from '../components/MiniCard'
 
@@ -29,11 +29,13 @@ const SearchScreen = () => {
           size={32}
         />
       </View>
-      <MiniCard />
-      <MiniCard />
-      <MiniCard />
-      <MiniCard />
-      <MiniCard />
+      <ScrollView>
+        <MiniCard />
+        <MiniCard />
+        <MiniCard />
+        <MiniCard />
+        <MiniCard />
+      </ScrollView>
 
     </View>
 

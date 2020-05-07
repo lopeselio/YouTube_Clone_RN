@@ -6,7 +6,7 @@ const Card = () => {
   return (
     <View style={{
       elevation: 6,
-      margin: 10
+      marginBottom: 10
     }}
     >
       <Image
@@ -21,7 +21,7 @@ const Card = () => {
         margin: 5
       }}
       >
-        <MaterialIcons name='account-circle' size={32} color='#212121' />
+        <MaterialIcons name='account-circle' size={40} color='#212121' />
         <View style={{
           marginLeft: 10
         }}
@@ -33,7 +33,7 @@ const Card = () => {
             }}
             ellipsizeMode='tail'
             numberOfLines={2}
-          >This is a good Course, you can opt for! It is worth doing!
+          >This is a good Course. It is worth doing....
           </Text>
           <Text>This is a good Course</Text>
         </View>

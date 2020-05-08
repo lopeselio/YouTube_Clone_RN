@@ -1,18 +1,30 @@
 import React, { useState } from 'react'
-import { View, TextInput, ScrollView, FlatList } from 'react-native'
+import { View, TextInput, FlatList } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MiniCard from '../components/MiniCard'
+import axios from 'axios'
+import 'isomorphic-fetch'
 // https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Logan%20Paul&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]
 const SearchScreen = () => {
   const [value, setValue] = useState('')
   const [miniCardData, setMiniCard] = useState([])
+  // const fetchData = () => {
+  //   fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCSgFY6AVA9TYrkoSKKaAIJGwK_FJr_brc]`)
+  //     .then(response => response.json())
+  //     .then(responseData => {
+  //       console.log(responseData)
+  //       setMiniCard(responseData.items)
+  //     })
+  // }
   const fetchData = () => {
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]`)
+    axios.get('url')
       .then(res => res.json())
       .then(data => {
         console.log(data)
         setMiniCard(data.items)
       })
+    // const nameList = res.data;
+    // this.setState({ nameList });
   }
   return (
     <View style={{ flex: 1 }}>

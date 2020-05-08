@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, Image, Dimensions, TextInput, ScrollView } from 'react-native'
+import { View, Text, Image, Dimensions, TextInput, ScrollView, FlatList } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MiniCard from '../components/MiniCard'
 // https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Logan%20Paul&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]
@@ -9,8 +9,9 @@ const SearchScreen = () => {
   const fetchData = () => {
     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]`)
       .then(res => res.json())
-      .then(data=>{
+      .then(data => {
         console.log(data)
+        setMiniCard(data.items)
       })
   }
   return (
@@ -38,14 +39,19 @@ const SearchScreen = () => {
           onPress={() => fetchData()}
         />
       </View>
-      <ScrollView>
-        <MiniCard />
-        <MiniCard />
-        <MiniCard />
-        <MiniCard />
-        <MiniCard />
-      </ScrollView>
-
+      // <ScrollView>
+      //   <MiniCard />
+      //   <MiniCard />
+      //   <MiniCard />
+      //   <MiniCard />
+      //   <MiniCard />
+      // </ScrollView>
+      <FlatList
+        data={miniCardData}
+        renderItem={({ item }) => {
+          return <MiniCard videoId={item.id.videoId} title={item.snippet.title} channel={item.snippet.channelTitle} />
+        }}
+      />
     </View>
 
   )

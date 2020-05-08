@@ -1,10 +1,11 @@
 import React from 'react'
 import { View, Text, Image, Dimensions } from 'react-native'
 
-const MiniCard = () => {
+const MiniCard = (props) => {
   return (
     <View style={{
-      flexDirection: 'row'
+      flexDirection: 'row',
+      marginBottom: 10
     }}
     >
       <Image
@@ -25,9 +26,9 @@ const MiniCard = () => {
           }}
           ellipsizeMode='tail'
           numberOfLines={3}
-        >This is an amazing tutorial.
+        >{props.title}
         </Text>
-        <Text style={{ fontSize: 12 }}>Elio is a passionate Coder!</Text>
+        <Text style={{ fontSize: 12 }}>{props.channel}</Text>
       </View>
     </View>
   )

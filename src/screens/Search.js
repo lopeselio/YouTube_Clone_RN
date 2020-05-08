@@ -1,7 +1,7 @@
 /* global fetch:false */
 
 import React, { useState } from 'react'
-import { View, TextInput, FlatList } from 'react-native'
+import { View, TextInput, FlatList, ActivityIndicator } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MiniCard from '../components/MiniCard'
 // import axios from 'axios'
@@ -10,13 +10,16 @@ import MiniCard from '../components/MiniCard'
 const SearchScreen = () => {
   const [value, setValue] = useState('')
   const [miniCardData, setMiniCard] = useState([])
+  const [loading, setLoading] = useState(false)
   // const URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCSgFY6AVA9TYrkoSKKaAIJGwK_FJr_brc]`
 
   const fetchData = (data) => {
+    setLoading(true)
     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=AIzaSyCSgFY6AVA9TYrkoSKKaAIJGwK_FJr_brc`)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
+        // console.log(data)
+        setLoading(false)
         setMiniCard(data.items)
       })
       .catch(function (error) {

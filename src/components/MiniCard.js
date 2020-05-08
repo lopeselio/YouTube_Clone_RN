@@ -5,11 +5,12 @@ const MiniCard = (props) => {
   return (
     <View style={{
       flexDirection: 'row',
-      marginBottom: 10
+      margin: 10,
+      marginBottom: 0
     }}
     >
       <Image
-        source={{ uri: `https://i.ytimg/vi/${props.videoId}/maxresdefault.jpg` }}
+        source={{ uri: `https://i.ytimg.com/vi/${props.videoId}/maxresdefault.jpg` }}
         style={{
           width: '45%',
           height: 100

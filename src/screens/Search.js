@@ -13,54 +13,16 @@ const SearchScreen = () => {
   // const URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCSgFY6AVA9TYrkoSKKaAIJGwK_FJr_brc]`
 
   const fetchData = (data) => {
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCSgFY6AVA9TYrkoSKKaAIJGwK_FJr_brc]`)
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=AIzaSyCSgFY6AVA9TYrkoSKKaAIJGwK_FJr_brc`)
       .then(response => response.json())
-      .then(responseData => {
-        console.log(responseData)
-        setMiniCard(responseData.items)
+      .then(data => {
+        console.log(data)
+        setMiniCard(data.items)
+      })
+      .catch(function (error) {
+        console.log(error)
       })
   }
-  // async function fetchData () {
-  //   try {
-  //     const response = await fetch(URL)
-  //     const responseJson = await response.json()
-  //     console.log(responseJson)
-  //     setMiniCard(responseJson.items)
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
-  // const fetchData = () => {
-  //   axios.get(url)
-  //     .then(res => res.json())
-  //     .then(response => {
-  //       console.log(response)
-  //       setMiniCard(response.items)
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error.response.request._response)
-  //     })
-  // }
-  // function fetchData () {
-  //   return fetch(url)
-  //     .then((response) => response.json())
-  //     .then((json) => {
-  //       return json.movies
-  //     })
-  //     .catch((error) => {
-  //       console.error(error)
-  //     })
-  // }
-  // async function fetchData () {
-  //   try {
-  //     const response = await fetch(url)
-  //     const json = await response.json()
-  //     // return json.items
-  //     setMiniCard(json.items)
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
 
   return (
     <View style={{ flex: 1 }}>

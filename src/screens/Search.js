@@ -1,31 +1,67 @@
+/* global fetch:false */
+
 import React, { useState } from 'react'
 import { View, TextInput, FlatList } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MiniCard from '../components/MiniCard'
-import axios from 'axios'
-import 'isomorphic-fetch'
+// import axios from 'axios'
+// import config from './config';
 // https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Logan%20Paul&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]
 const SearchScreen = () => {
   const [value, setValue] = useState('')
   const [miniCardData, setMiniCard] = useState([])
+  // const URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCSgFY6AVA9TYrkoSKKaAIJGwK_FJr_brc]`
+
+  const fetchData = (data) => {
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCSgFY6AVA9TYrkoSKKaAIJGwK_FJr_brc]`)
+      .then(response => response.json())
+      .then(responseData => {
+        console.log(responseData)
+        setMiniCard(responseData.items)
+      })
+  }
+  // async function fetchData () {
+  //   try {
+  //     const response = await fetch(URL)
+  //     const responseJson = await response.json()
+  //     console.log(responseJson)
+  //     setMiniCard(responseJson.items)
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
   // const fetchData = () => {
-  //   fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCSgFY6AVA9TYrkoSKKaAIJGwK_FJr_brc]`)
-  //     .then(response => response.json())
-  //     .then(responseData => {
-  //       console.log(responseData)
-  //       setMiniCard(responseData.items)
+  //   axios.get(url)
+  //     .then(res => res.json())
+  //     .then(response => {
+  //       console.log(response)
+  //       setMiniCard(response.items)
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error.response.request._response)
   //     })
   // }
-  const fetchData = () => {
-    axios.get('url')
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        setMiniCard(data.items)
-      })
-    // const nameList = res.data;
-    // this.setState({ nameList });
-  }
+  // function fetchData () {
+  //   return fetch(url)
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       return json.movies
+  //     })
+  //     .catch((error) => {
+  //       console.error(error)
+  //     })
+  // }
+  // async function fetchData () {
+  //   try {
+  //     const response = await fetch(url)
+  //     const json = await response.json()
+  //     // return json.items
+  //     setMiniCard(json.items)
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
+
   return (
     <View style={{ flex: 1 }}>
       <View style={{

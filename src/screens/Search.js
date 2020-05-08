@@ -2,9 +2,17 @@ import React, { useState } from 'react'
 import { View, Text, Image, Dimensions, TextInput, ScrollView } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MiniCard from '../components/MiniCard'
-//https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Logan%20Paul&type=video&key=[YOUR_API_KEY]
+// https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Logan%20Paul&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]
 const SearchScreen = () => {
   const [value, setValue] = useState('')
+  const [miniCardData, setMiniCard] = useState([])
+  const fetchData = () => {
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]`)
+      .then(res => res.json())
+      .then(data=>{
+        console.log(data)
+      })
+  }
   return (
     <View style={{ flex: 1 }}>
       <View style={{
@@ -27,6 +35,7 @@ const SearchScreen = () => {
         <Ionicons
           name='md-send'
           size={32}
+          onPress={() => fetchData()}
         />
       </View>
       <ScrollView>

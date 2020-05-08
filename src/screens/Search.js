@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, Image, Dimensions, TextInput, ScrollView } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MiniCard from '../components/MiniCard'
-
+//https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Logan%20Paul&type=video&key=[YOUR_API_KEY]
 const SearchScreen = () => {
   const [value, setValue] = useState('')
   return (

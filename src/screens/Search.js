@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, Image, Dimensions, TextInput, ScrollView, FlatList } from 'react-native'
+import { View, TextInput, ScrollView, FlatList } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MiniCard from '../components/MiniCard'
 // https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Logan%20Paul&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]
@@ -31,6 +31,7 @@ const SearchScreen = () => {
             backgroundColor: '#e6e6e6'
           }}
           value={value}
+          placeholder='Type Something'
           onChangeText={(text) => setValue(text)}
         />
         <Ionicons
@@ -39,13 +40,6 @@ const SearchScreen = () => {
           onPress={() => fetchData()}
         />
       </View>
-      // <ScrollView>
-      //   <MiniCard />
-      //   <MiniCard />
-      //   <MiniCard />
-      //   <MiniCard />
-      //   <MiniCard />
-      // </ScrollView>
       <FlatList
         data={miniCardData}
         renderItem={({ item }) => {

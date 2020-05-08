@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import HomeScreen from './src/screens/Home'
+// import HomeScreen from './src/screens/Home'
 import Constant from 'expo-constants'
 
 // import Card from './src/components/Card'

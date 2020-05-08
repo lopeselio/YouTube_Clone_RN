@@ -45,6 +45,7 @@ const SearchScreen = () => {
         renderItem={({ item }) => {
           return <MiniCard videoId={item.id.videoId} title={item.snippet.title} channel={item.snippet.channelTitle} />
         }}
+        keyExtractor={item => item.id.videoId}
       />
     </View>
 

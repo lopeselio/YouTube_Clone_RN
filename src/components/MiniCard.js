@@ -10,7 +10,7 @@ const MiniCard = (props) => {
     }}
     >
       <Image
-        source={{ uri: `https://i.ytimg.com/vi/${props.videoId}/maxresdefault.jpg` }}
+        source={{ uri: `https://i.ytimg.com/vi/${props.videoId}/mqdefault.jpg` }}
         style={{
           width: '45%',
           height: 100

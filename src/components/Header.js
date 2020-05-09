@@ -3,7 +3,6 @@ import { View, Text } from 'react-native'
 import { Entypo, Ionicons, MaterialIcons } from '@expo/vector-icons'
 import Constant from 'expo-constants'
 
-
 export default function Header () {
   const myColor = '#212121'
   return (

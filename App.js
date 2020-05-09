@@ -9,10 +9,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 // import Card from './src/components/Card'
 import SearchScreen from './src/screens/Search'
 
+const Stack = createStackNavigator()
+const Tabs = createBottomTabNavigator()
+
 export default function App () {
   return (
     <NavigationContainer>
-    
+      <Stack.Navigator>
+      </Stack.Navigator>
     </NavigationContainer>
   )
 }

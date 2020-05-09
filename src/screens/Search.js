@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { View, TextInput, FlatList, ActivityIndicator } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MiniCard from '../components/MiniCard'
+import Constant from 'expo-constants'
+
 // import axios from 'axios'
 // import config from './config';
 // https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Logan%20Paul&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]
@@ -28,7 +30,11 @@ const SearchScreen = () => {
   }
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{
+      flex: 1,
+      marginTop: Constant.statusBarHeight
+    }}
+    >
       <View style={{
         padding: 5,
         flexDirection: 'row',

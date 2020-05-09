@@ -17,7 +17,7 @@ const Stack = createStackNavigator()
 const Tabs = createBottomTabNavigator()
 
 const RootHome = () => {
-  return(
+  return (
     <Tabs.Navigator>
       <Tabs.Screen name='home' component={HomeScreen} />
       <Tabs.Screen name='explore' component={Explore} />
@@ -28,8 +28,11 @@ const RootHome = () => {
 
 export default function App () {
   return (
-    <NavigationContainer>
+    <NavigationContainer headerMode='none'>
       <Stack.Navigator>
+        <Stack.Screen name='rootHome' component={RootHome} />
+        <Stack.Screen name='search' component={Search} />
+        <Stack.Screen name='videoPlayer' component={VideoPlayer} />
       </Stack.Navigator>
     </NavigationContainer>
   )

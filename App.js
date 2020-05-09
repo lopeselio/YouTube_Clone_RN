@@ -22,7 +22,7 @@ const RootHome = () => {
     <Tabs.Navigator>
       <Tabs.Screen name='home' component={HomeScreen} />
       <Tabs.Screen name='explore' component={Explore} />
-      <Tabs.Screen name='home' component={Subscribe} />
+      <Tabs.Screen name='subscribe' component={Subscribe} />
     </Tabs.Navigator>
   )
 }
@@ -31,7 +31,7 @@ export default function App () {
   return (
     <NavigationContainer headerMode='none'>
       <Stack.Navigator>
-        <Stack.Screen name='rootHome' component={RootHome} />
+        <Stack.Screen name='roothome' component={RootHome} />
         <Stack.Screen name='search' component={Search} />
         <Stack.Screen name='videoPlayer' component={VideoPlayer} />
       </Stack.Navigator>

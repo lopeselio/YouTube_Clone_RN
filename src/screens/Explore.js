@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import Header from '../components/Header'
 
-const LittleCard = (props) => {
+const LittleCard = ({ name }) => {
   return (
     <View style={{
       backgroundColor: 'red',
@@ -33,12 +33,12 @@ const Explore = () => {
         justifyContent: 'space-around'
       }}
       >
-        <LittleCard />
-        <LittleCard />
-        <LittleCard />
-        <LittleCard />
-        <LittleCard />
-        <LittleCard />
+        <LittleCard name='Trending' />
+        <LittleCard name='Gaming' />
+        <LittleCard name='Music' />
+        <LittleCard name='News' />
+        <LittleCard name='Movies' />
+        <LittleCard name='Fashion' />
       </View>
     </View>
 

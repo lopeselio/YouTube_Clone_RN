@@ -5,13 +5,18 @@ import { View, TextInput, FlatList, ActivityIndicator } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MiniCard from '../components/MiniCard'
 import Constant from 'expo-constants'
+import { useSelector, useDispatch } from 'react-redux'
 
 // import axios from 'axios'
 // import config from './config';
 // https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Logan%20Paul&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]
 const SearchScreen = ({ navigation }) => {
   const [value, setValue] = useState('')
-  const [miniCardData, setMiniCard] = useState([])
+  // const [miniCardData, setMiniCard] = useState([])
+  const dispatch = useDispatch()
+  const miniCardData = useSelector(state => {
+    return state
+  })
   const [loading, setLoading] = useState(false)
   // const URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCSgFY6AVA9TYrkoSKKaAIJGwK_FJr_brc]`
 
@@ -22,7 +27,8 @@ const SearchScreen = ({ navigation }) => {
       .then(data => {
         // console.log(data)
         setLoading(false)
-        setMiniCard(data.items)
+        // setMiniCard(data.items)
+        dispatch({ type: 'add', payload: data.items })
       })
       .catch(function (error) {
         console.log(error)

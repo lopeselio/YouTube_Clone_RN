@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { Entypo, Ionicons, MaterialIcons } from '@expo/vector-icons'
 import Constant from 'expo-constants'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native'
 
 export default function Header () {
   const navigation = useNavigation()

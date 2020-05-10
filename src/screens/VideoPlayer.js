@@ -3,7 +3,8 @@ import { View, Text, Dimensions } from 'react-native'
 import Constant from 'expo-constants'
 import { WebView } from 'react-native-webview'
 
-const VideoPlayer = (props) => {
+const VideoPlayer = ({ route }) => {
+  const { videoId, title } = route.params
   return (
     <View style={{
       flex: 1,
@@ -16,7 +17,7 @@ const VideoPlayer = (props) => {
       }}
       >
         <WebView
-          source={{ uri: `https://www.youtube.com/embed/${props.videoId}` }}
+          source={{ uri: `https://www.youtube.com/embed/${videoId}` }}
         />
       </View>
       <Text
@@ -28,7 +29,7 @@ const VideoPlayer = (props) => {
         numberOfLines={2}
         ellipsizeMode='tail'
       >
-        {props.title}
+        {title}
       </Text>
       <View
         style={{ borderBottomWidth: 1 }}

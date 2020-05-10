@@ -2,16 +2,17 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { Entypo, Ionicons, MaterialIcons } from '@expo/vector-icons'
 import Constant from 'expo-constants'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useTheme } from '@react-navigation/native'
 
 export default function Header () {
   const navigation = useNavigation()
-  const myColor = '#212121'
+  const { colors } = useTheme()
+  const myColor = colors.iconColor
   return (
     <View style={{
       marginTop: Constant.statusBarHeight,
       height: 40,
-      backgroundColor: 'white',
+      backgroundColor: colors.headerColor,
       flexDirection: 'row',
       justifyContent: 'space-between',
       elevation: 4

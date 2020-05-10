@@ -6,11 +6,14 @@ import { Ionicons } from '@expo/vector-icons'
 import MiniCard from '../components/MiniCard'
 import Constant from 'expo-constants'
 import { useSelector, useDispatch } from 'react-redux'
+import { useTheme } from '@react-navigation/native'
 
 // import axios from 'axios'
 // import config from './config';
 // https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Logan%20Paul&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]
 const SearchScreen = ({ navigation }) => {
+  const { colors } = useTheme()
+  const mycolor = colors.iconColor
   const [value, setValue] = useState('')
   // const [miniCardData, setMiniCard] = useState([])
   const dispatch = useDispatch()
@@ -46,10 +49,11 @@ const SearchScreen = ({ navigation }) => {
         flexDirection: 'row',
         justifyContent: 'space-around',
         elevation: 6,
-        backgroundColor: 'white'
+        backgroundColor: colors.headerColor
       }}
       >
         <Ionicons
+          style={{ color: mycolor }}
           name='md-arrow-back'
           size={32}
           onPress={() => navigation.goBack()}
@@ -64,6 +68,7 @@ const SearchScreen = ({ navigation }) => {
           onChangeText={(text) => setValue(text)}
         />
         <Ionicons
+          style={{ color: mycolor }}
           name='md-send'
           size={32}
           onPress={() => fetchData()}

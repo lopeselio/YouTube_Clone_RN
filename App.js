@@ -3,7 +3,7 @@ import React from 'react'
 // import HomeScreen from './src/screens/Home'
 // import Constant from 'expo-constants'
 import 'react-native-gesture-handler'
-import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer, DefaultTheme, DarkTheme, useTheme } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 // import Card from './src/components/Card'
@@ -23,6 +23,7 @@ const Tabs = createBottomTabNavigator()
 const store = createStore(reducer)
 
 const RootHome = () => {
+  const { colors } = useTheme()
   return (
     <Tabs.Navigator
       screenOptions={({ route }) => ({
@@ -42,7 +43,7 @@ const RootHome = () => {
         }
       })}
       tabBarOptions={{
-        activeTintColor: 'red',
+        activeTintColor: 'colors.tabIcon',
         inactiveTintColor: 'gray'
       }}
     >
@@ -53,10 +54,32 @@ const RootHome = () => {
   )
 }
 
+const customDarkTheme = {
+  ...DarkTheme,
+  colors: {
+    ...DarkTheme.colors,
+    headerColor: '#404040',
+    iconColor: 'white',
+    tabIcon: 'white'
+  }
+}
+
+const customDeafultTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    headerColor: 'white',
+    iconColor: 'black',
+    tabIcon: 'red'
+
+
+  }
+}
+
 export default function App () {
   return (
     <Provider store={store}>
-      <NavigationContainer>
+      <NavigationContainer theme={customDarkTheme}>
         <Stack.Navigator headerMode='none'>
           <Stack.Screen name='roothome' component={RootHome} />
           <Stack.Screen name='search' component={Search} />

@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import Card from '../components/Card'
 import { useSelector } from 'react-redux'
 
-export default function HomeScreen () {
+export default function HomeScreen ({ navigation }) {
   const cardData = useSelector(state => {
     return state
   })

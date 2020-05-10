@@ -29,8 +29,8 @@ const RootHome = () => {
 
 export default function App () {
   return (
-    <NavigationContainer headerMode='none'>
-      <Stack.Navigator>
+    <NavigationContainer>
+      <Stack.Navigator headerMode='none'>
         <Stack.Screen name='roothome' component={RootHome} />
         <Stack.Screen name='search' component={Search} />
         <Stack.Screen name='videoPlayer' component={VideoPlayer} />

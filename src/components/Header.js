@@ -2,7 +2,10 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { Entypo, Ionicons, MaterialIcons } from '@expo/vector-icons'
 import Constant from 'expo-constants'
+import { useNavigation } from '@react-navigation/native';
+
 export default function Header () {
+  const navigation = useNavigation()
   const myColor = '#212121'
   return (
     <View style={{
@@ -38,7 +41,7 @@ export default function Header () {
       }}
       >
         <Ionicons style={{ marginLeft: 5 }} name='md-videocam' size={32} color={myColor} />
-        <Ionicons style={{ marginLeft: 5 }} name='md-search' size={32} color={myColor} />
+        <Ionicons style={{ marginLeft: 5 }} name='md-search' size={32} onPress={() => navigation.navigate('search')} color={myColor} />
         <MaterialIcons style={{ marginLeft: 5 }} name='account-circle' size={32} color={myColor} />
       </View>
     </View>

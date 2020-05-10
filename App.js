@@ -31,11 +31,11 @@ const RootHome = () => {
           } else if (route.name === 'explore') {
             iconName = 'explore'
           } else if (route.name === 'subscribe') {
-            iconName = 'subscription'
+            iconName = 'subscriptions'
           }
 
           // You can return any component that you like here!
-          return <MaterialIcons name={iconName} size={32} color={color} />
+          return <MaterialIcons name={iconName} size={25} color={color} />
         }
       })}
       tabBarOptions={{

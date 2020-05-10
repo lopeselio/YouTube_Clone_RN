@@ -9,7 +9,7 @@ import Constant from 'expo-constants'
 // import axios from 'axios'
 // import config from './config';
 // https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Logan%20Paul&type=video&key=[AIzaSyCwvNqy4K8dCelF1qIkJijtZQSJfMFkKW8]
-const SearchScreen = () => {
+const SearchScreen = ({ navigation }) => {
   const [value, setValue] = useState('')
   const [miniCardData, setMiniCard] = useState([])
   const [loading, setLoading] = useState(false)
@@ -43,7 +43,11 @@ const SearchScreen = () => {
         backgroundColor: 'white'
       }}
       >
-        <Ionicons name='md-arrow-back' size={32} />
+        <Ionicons
+          name='md-arrow-back'
+          size={32}
+          onPress={() => navigation.goBack()}
+        />
         <TextInput
           style={{
             width: '70%',

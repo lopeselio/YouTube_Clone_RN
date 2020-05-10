@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, Image, Dimensions } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
 
-const Card = () => {
+const Card = (props) => {
   return (
     <View style={{
       elevation: 6,
@@ -10,7 +10,7 @@ const Card = () => {
     }}
     >
       <Image
-        source={{ uri: 'https://images.unsplash.com/photo-1548276145-69a9521f0499?ixlib=rb-1.2.1&auto=format&fit=crop&w=1056&q=80' }}
+        source={{ uri: `https://i.ytimg.com/vi/${props.videoId}/mqdefault.jpg` }}
         style={{
           width: '100%',
           height: 200
@@ -33,9 +33,9 @@ const Card = () => {
             }}
             ellipsizeMode='tail'
             numberOfLines={2}
-          >This is a good Course. It is worth doing....
+          >{props.title}
           </Text>
-          <Text>This is a good Course</Text>
+          <Text>{props.channel}</Text>
         </View>
       </View>
     </View>

@@ -17,6 +17,7 @@ const VideoPlayer = ({ route }) => {
       }}
       >
         <WebView
+          javaScriptEnabled
           source={{ uri: `https://www.youtube.com/embed/${videoId}` }}
         />
       </View>

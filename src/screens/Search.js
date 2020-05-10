@@ -18,7 +18,7 @@ const SearchScreen = ({ navigation }) => {
   // const [miniCardData, setMiniCard] = useState([])
   const dispatch = useDispatch()
   const miniCardData = useSelector(state => {
-    return state
+    return state.cardData
   })
   const [loading, setLoading] = useState(false)
   // const URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=[AIzaSyCSgFY6AVA9TYrkoSKKaAIJGwK_FJr_brc]`

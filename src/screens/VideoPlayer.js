@@ -13,11 +13,12 @@ const VideoPlayer = ({ route }) => {
     >
       <View style={{
         width: '100%',
-        height: 200
+        height: 400
       }}
       >
         <WebView
           javaScriptEnabled
+          domStorageEnabled
           source={{ uri: `https://www.youtube.com/embed/${videoId}` }}
         />
       </View>

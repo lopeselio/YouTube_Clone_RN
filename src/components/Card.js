@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react'
 import { Text, View, Image, Dimensions, TouchableOpacity } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
 import { useNavigation, useTheme } from '@react-navigation/native'
